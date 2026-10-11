@@ -6,6 +6,10 @@
 
 A guide in English about **REA (Reverse Engineer Anything)**, the open tool that gives your AI agent (Claude Code, Codex, Cursor, Gemini…) reverse engineering tools. It gathers the links, explains the technology in plain language, offers an honest assessment of who this is useful for, and includes a test run here. The repositories cited belong to third parties: this repo only organizes and explains.
 
+## 🎬 Video
+
+**[Watch: REA, the AI that does reverse engineering](https://inematds.github.io/rea-engenharia-reversa/videos/)** (6 min, in Portuguese, with chapters and subtitles).
+
 ## 📖 User guide
 
 Full guide (landing page + step by step): **https://inematds.github.io/rea-engenharia-reversa/guia/en/**

@@ -6,6 +6,10 @@
 
 Guia em português sobre o **REA (Reverse Engineer Anything)**, a ferramenta aberta que dá ao seu agente de IA (Claude Code, Codex, Cursor, Gemini…) as ferramentas de engenharia reversa. Reúne os links, explica a tecnologia em linguagem simples, traz uma avaliação honesta de para quem isso é útil e um teste feito aqui. Os repositórios citados são de terceiros: este repo só organiza e explica.
 
+## 🎬 Vídeo
+
+**[Assistir: REA, a IA que faz engenharia reversa](https://inematds.github.io/rea-engenharia-reversa/videos/)** (6 min, avatar e voz do Nei, capítulos e legendas).
+
 ## 📖 Guia de uso
 
 Guia completo (landing + passo a passo): **https://inematds.github.io/rea-engenharia-reversa/guia/**
