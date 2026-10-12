@@ -1,0 +1,460 @@
+WEBVTT
+
+00:00.000 --> 00:00.880
+Você pode clonar
+
+00:00.880 --> 00:01.320
+a função que
+
+00:01.320 --> 00:01.880
+mais gosta de
+
+00:01.880 --> 00:03.000
+um aplicativo usando
+
+00:03.000 --> 00:03.640
+o seu próprio
+
+00:03.640 --> 00:04.960
+agente de inteligência
+
+00:04.960 --> 00:05.360
+artificial.
+
+00:05.360 --> 00:06.100
+Hoje eu te
+
+00:06.100 --> 00:06.860
+mostro como, em
+
+00:06.860 --> 00:07.900
+quatro passos, do
+
+00:07.900 --> 00:08.680
+terminal até o
+
+00:08.680 --> 00:09.400
+app rodando.
+
+00:09.400 --> 00:10.020
+E no fim,
+
+00:10.020 --> 00:10.560
+o erro que
+
+00:10.560 --> 00:11.140
+travou o nosso
+
+00:11.140 --> 00:12.080
+teste e como
+
+00:12.080 --> 00:12.820
+você evita.
+
+00:12.820 --> 00:13.880
+A ferramenta se
+
+00:13.880 --> 00:15.120
+chama REA, de
+
+00:15.120 --> 00:15.800
+Reverse Engineer
+
+00:15.800 --> 00:16.660
+Anything.
+
+00:16.660 --> 00:17.360
+Ela é uma
+
+00:17.360 --> 00:18.140
+skill que ensina
+
+00:18.140 --> 00:18.600
+o agente a
+
+00:18.600 --> 00:19.420
+usar ferramentas de
+
+00:19.420 --> 00:20.740
+engenharia reversa: o
+
+00:20.740 --> 00:21.700
+Hopper para programas
+
+00:21.700 --> 00:22.740
+de desktop, um
+
+00:22.740 --> 00:23.500
+analisador para
+
+00:23.500 --> 00:24.180
+aplicativos em
+
+00:24.180 --> 00:25.380
+JavaScript, e outras.
+
+00:25.380 --> 00:26.460
+O agente olha
+
+00:26.460 --> 00:26.980
+o app por
+
+00:26.980 --> 00:28.420
+dentro, junta evidências
+
+00:28.420 --> 00:28.940
+de como ele
+
+00:28.940 --> 00:29.860
+funciona, e com
+
+00:29.860 --> 00:30.560
+esse contexto o
+
+00:30.560 --> 00:31.140
+clone sai muito
+
+00:31.140 --> 00:31.780
+mais fiel.
+
+00:31.780 --> 00:32.940
+Passo um: prepare
+
+00:32.940 --> 00:33.600
+a máquina.
+
+00:33.600 --> 00:34.400
+Abra o terminal
+
+00:34.400 --> 00:35.380
+e digite node,
+
+00:35.380 --> 00:36.580
+traço v.
+
+00:37.040 --> 00:37.760
+Precisa ser a
+
+00:37.760 --> 00:38.285
+versão vinte e
+
+00:38.285 --> 00:39.100
+quatro ou mais
+
+00:39.100 --> 00:39.840
+nova; se for
+
+00:39.840 --> 00:40.740
+mais velha, atualize
+
+00:40.740 --> 00:41.160
+antes.
+
+00:41.160 --> 00:41.840
+E tenha um
+
+00:41.840 --> 00:43.200
+agente instalado: Claude
+
+00:43.200 --> 00:44.640
+Code, Codex ou
+
+00:44.640 --> 00:45.620
+OpenCode.
+
+00:45.620 --> 00:47.040
+Passo dois: instale.
+
+00:47.040 --> 00:47.740
+É um comando
+
+00:47.740 --> 00:48.860
+só:
+
+00:48.860 --> 00:49.880
+npx
+
+00:49.880 --> 00:52.060
+rea-agents arroba latest
+
+00:52.060 --> 00:52.540
+setup.
+
+00:52.540 --> 00:53.440
+Ele mostra o
+
+00:53.440 --> 00:54.320
+plano, faz uma
+
+00:54.320 --> 00:54.920
+cópia da sua
+
+00:54.920 --> 00:56.080
+configuração e pergunta
+
+00:56.080 --> 00:56.960
+antes de mexer.
+
+00:56.960 --> 00:57.920
+Você escolhe o
+
+00:57.920 --> 00:58.840
+seu agente, aceita
+
+00:58.840 --> 00:59.480
+o Hopper, que
+
+00:59.480 --> 01:00.100
+é quem desmonta
+
+01:00.100 --> 01:00.600
+os programas de
+
+01:00.600 --> 01:02.020
+desktop, e confirma
+
+01:02.020 --> 01:02.800
+as mudanças.
+
+01:02.800 --> 01:04.000
+Passo três: peça
+
+01:04.000 --> 01:04.420
+o clone.
+
+01:04.420 --> 01:05.300
+Abra o agente
+
+01:05.300 --> 01:05.940
+numa pasta nova
+
+01:05.940 --> 01:06.640
+e escreva em
+
+01:06.640 --> 01:07.840
+português: encontre o
+
+01:07.840 --> 01:09.420
+aplicativo, use o
+
+01:09.420 --> 01:10.820
+REA para inspecionar
+
+01:10.820 --> 01:11.660
+como ele funciona,
+
+01:11.660 --> 01:12.360
+use o site
+
+01:12.360 --> 01:13.420
+oficial como referência,
+
+01:13.420 --> 01:14.420
+e construa uma
+
+01:14.420 --> 01:15.360
+versão pequena que
+
+01:15.360 --> 01:15.760
+funcione.
+
+01:15.760 --> 01:16.867
+No exemplo do
+
+01:16.867 --> 01:17.620
+Wispr Flow, que
+
+01:17.620 --> 01:18.380
+transforma voz em
+
+01:18.380 --> 01:19.240
+texto, o clone
+
+01:19.240 --> 01:20.040
+saiu com atalho
+
+01:20.040 --> 01:21.020
+de teclado, notas
+
+01:21.020 --> 01:21.660
+de reunião e
+
+01:21.660 --> 01:22.580
+transcrição feita no
+
+01:22.580 --> 01:23.620
+próprio computador.
+
+01:23.620 --> 01:25.160
+Passo quatro: confira.
+
+01:25.160 --> 01:26.120
+O agente devolve
+
+01:26.120 --> 01:27.040
+as evidências: o
+
+01:27.040 --> 01:27.380
+que o app
+
+01:27.380 --> 01:28.340
+faz, como ele
+
+01:28.340 --> 01:29.040
+foi montado e
+
+01:29.040 --> 01:29.440
+o plano de
+
+01:29.440 --> 01:30.060
+construção.
+
+01:30.060 --> 01:30.960
+Teste cada função
+
+01:30.960 --> 01:31.640
+antes de pedir
+
+01:31.640 --> 01:32.220
+a próxima.
+
+01:32.220 --> 01:32.820
+É assim que
+
+01:32.820 --> 01:33.260
+o clone fica
+
+01:33.260 --> 01:33.740
+de pé.
+
+01:33.740 --> 01:34.580
+Agora o que
+
+01:34.580 --> 01:35.280
+aconteceu no nosso
+
+01:35.280 --> 01:35.780
+teste.
+
+01:35.780 --> 01:36.600
+Num projeto de
+
+01:36.600 --> 01:37.950
+tamanho normal, levou
+
+01:37.950 --> 01:38.920
+vinte segundos e
+
+01:38.920 --> 01:39.832
+encontrou mais de
+
+01:39.832 --> 01:40.168
+dois mil e
+
+01:40.168 --> 01:41.400
+quinhentos achados, sem
+
+01:41.400 --> 01:41.920
+nem abrir o
+
+01:41.920 --> 01:42.440
+aplicativo.
+
+01:42.440 --> 01:43.340
+Mas num app
+
+01:43.340 --> 01:44.400
+com um único
+
+01:44.400 --> 01:45.000
+arquivo JavaScript
+
+01:45.000 --> 01:46.420
+gigante, ficou mais
+
+01:46.420 --> 01:47.100
+de vinte minutos
+
+01:47.100 --> 01:48.200
+travado e só
+
+01:48.200 --> 01:48.820
+parou quando eu
+
+01:48.820 --> 01:49.300
+forcei.
+
+01:49.300 --> 01:50.680
+Para evitar: rode
+
+01:50.680 --> 01:51.300
+com limite de
+
+01:51.300 --> 01:52.240
+tempo, tire a
+
+01:52.240 --> 01:53.700
+pasta node_modules da
+
+01:53.700 --> 01:54.800
+análise e comece
+
+01:54.800 --> 01:55.160
+por um app
+
+01:55.160 --> 01:56.240
+pequeno, uma função
+
+01:56.240 --> 01:57.020
+de cada vez.
+
+01:57.020 --> 01:57.760
+E use em
+
+01:57.760 --> 01:58.580
+app seu, ou
+
+01:58.580 --> 01:59.440
+para estudar: não
+
+01:59.440 --> 01:59.980
+copie a marca
+
+01:59.980 --> 02:00.500
+de ninguém.
+
+02:00.500 --> 02:01.300
+Se qualquer um
+
+02:01.300 --> 02:02.100
+consegue clonar a
+
+02:02.100 --> 02:03.100
+função, o código
+
+02:03.100 --> 02:03.640
+deixou de ser
+
+02:03.640 --> 02:04.140
+o fosso.
+
+02:04.140 --> 02:04.980
+O que protege
+
+02:04.980 --> 02:05.980
+agora é marca,
+
+02:05.980 --> 02:07.200
+usuários e dados.
+
+02:07.200 --> 02:08.140
+O guia completo,
+
+02:08.140 --> 02:08.760
+com todos os
+
+02:08.760 --> 02:09.760
+comandos, está no
+
+02:09.760 --> 02:10.840
+inema ponto club.
