@@ -100,6 +100,11 @@
   .phase .d span{color:var(--mut);font-size:.92rem}
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  .tbl{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:.95rem}
+  .tbl th,.tbl td{border:1px solid var(--line);padding:.65em .8em;text-align:left}
+  .tbl th{background:var(--bg2);color:var(--amb2);font-weight:700}
+  .tbl td:first-child{font-weight:700}
+  .tblwrap{overflow-x:auto}
 </style>
 </head>
 
@@ -113,6 +118,7 @@
   </span>
   <div class="links">
     <a class="sec" href="#oque">What it is</a>
+    <a class="sec" href="#custo">Cost</a>
     <a class="sec" href="#guia">Get started</a>
     <a class="sec" href="#exemplos">Cases</a>
     <a class="sec" href="#avaliacao">Worth it?</a>
@@ -170,10 +176,10 @@
     <span>the agent explains or implements</span>
   </div>
   <div class="ex" style="margin-top:26px">
-    <figure><img src="../assets/02a-compilar.jpg" alt="Source code goes through the compiler and becomes a binary" loading="lazy"><figcaption>Compiling turns the code into machine instructions; the names disappear along the way.</figcaption></figure>
-    <figure><img src="../assets/03a-electron.jpg" alt="Electron easy, native hard" loading="lazy"><figcaption>An Electron app still keeps the JavaScript (easy analysis, without running anything). A native app needs a decompiler.</figcaption></figure>
-    <figure><img src="../assets/04a-ferramentas.jpg" alt="Ghidra free, Hopper, IDA Pro expensive" loading="lazy"><figcaption>Ghidra (free, from the NSA), Hopper (lightweight) and IDA Pro (industry standard, expensive): REA uses whatever you have.</figcaption></figure>
-    <figure><img src="../assets/05a-ponte.jpg" alt="Your agent, REA via MCP, Ghidra Hopper IDA" loading="lazy"><figcaption>The agent talks to REA over MCP: "open binary", "find strings", "who calls this function?".</figcaption></figure>
+    <figure><img src="../assets/02a-compilar-en.jpg" alt="Source code goes through the compiler and becomes a binary" loading="lazy"><figcaption>Compiling turns the code into machine instructions; the names disappear along the way.</figcaption></figure>
+    <figure><img src="../assets/03a-electron-en.jpg" alt="Electron easy, native hard" loading="lazy"><figcaption>An Electron app still keeps the JavaScript (easy analysis, without running anything). A native app needs a decompiler.</figcaption></figure>
+    <figure><img src="../assets/04a-ferramentas-en.jpg" alt="Ghidra free, Hopper, IDA Pro expensive" loading="lazy"><figcaption>Ghidra (free, from the NSA), Hopper (lightweight) and IDA Pro (industry standard, expensive): REA uses whatever you have.</figcaption></figure>
+    <figure><img src="../assets/05a-ponte-en.jpg" alt="Your agent, REA via MCP, Ghidra Hopper IDA" loading="lazy"><figcaption>The agent talks to REA over MCP: "open binary", "find strings", "who calls this function?".</figcaption></figure>
   </div>
 </div></section>
 
@@ -187,6 +193,21 @@
     <div class="card"><h3>Decompiler (native only)</h3><p>Ghidra (free, needs Java), Hopper or IDA. The setup can install Hopper, with your permission.</p><pre><span class="c"># Ghidra: download at</span>
 <span class="s">github.com/NationalSecurityAgency/ghidra/releases</span></pre></div>
   </div>
+</div></section>
+
+<section id="custo"><div class="wrap">
+  <span class="chip">Tools · cost</span>
+  <h2>Which decompiler to use, and what it costs</h2>
+  <p class="sub">Of the three REA supports, only Ghidra is fully free and open source. IDA has a Free edition, with limits.</p>
+  <div class="tblwrap"><table class="tbl"><thead><tr><th>Tool</th><th>Free?</th><th>Open source?</th><th>Price</th></tr></thead><tbody><tr><td>Ghidra</td><td>Yes</td><td>Yes</td><td>US$ 0</td></tr><tr><td>Hopper</td><td>Free trial</td><td>No</td><td>Paid license</td></tr><tr><td>IDA</td><td>Free edition</td><td>No</td><td>Pro from ~US$ 1,099/year</td></tr></tbody></table></div>
+  <div class="grid g3">
+    <div class="card"><h3>1. Ghidra — the pick</h3><p>Built by the NSA, runs on Windows, Linux and Mac, decompiles and supports script automation. No license cost, commercial use included.</p><p><a href="https://github.com/NationalSecurityAgency/ghidra" target="_blank" rel="noopener">Official GitHub →</a></p></div>
+    <div class="card"><h3>2. Hopper — the Mac alternative</h3><p>Commercial, with a free trial. The current version advertises native MCP integration, which matters for AI agents.</p><p><a href="https://www.hopperapp.com/" target="_blank" rel="noopener">Official site →</a></p></div>
+    <div class="card"><h3>3. IDA — the professional one</h3><p>IDA Free only covers x86/x64 and non-commercial use, and lacks the IDAPython API of the paid plans, which gets in the way of automation.</p><p><a href="https://hex-rays.com/pricing" target="_blank" rel="noopener">Editions and pricing →</a></p></div>
+  </div>
+  <h3 style="margin-top:28px">And what does a REA setup cost?</h3>
+  <div class="tblwrap"><table class="tbl"><tbody><tr><td>AI agent (Codex or Claude Code)</td><td>Variable: subscription or tokens</td></tr><tr><td>REA + MCP</td><td>Free (MIT): integration and orchestration</td></tr><tr><td>Ghidra</td><td>Free and open source</td></tr></tbody></table></div>
+  <p><b>Bottom line:</b> to build your own reverse engineering system with agents, start with <b>REA + Ghidra + Codex</b>. There is no decompiler license to pay, and the analysis runs on a Windows or Linux machine, including a properly configured VPS. The main cost is compute and AI tokens, if you use a paid model. Prices change: check the official sites before buying.</p>
 </div></section>
 
 <section id="guia"><div class="wrap">
@@ -226,10 +247,10 @@ and build something similar in my project."</span></pre>
   <h2>What people have already done with it</h2>
   <p class="sub">Numbers taken from the repositories and the official site on Oct 10, 2026.</p>
   <div class="ex">
-    <figure><img src="../assets/07b-regras.jpg" alt="The 3 rules of the vault" loading="lazy"><figcaption><b>The vault.</b> An app compiled without names (242+ <code>FUN_…</code> functions). The agent found the right function, recovered the 3 rules from the code and wrote a generator: <code>AGNT-1001</code> opened it.</figcaption></figure>
-    <figure><img src="../assets/08b-ciclo.jpg" alt="Cycle: trace, write, compile, compare" loading="lazy"><figcaption><b>DX-Ball (1990s).</b> 528 candidate functions, 283 rewritten in C, <b>140 byte-for-byte identical</b>. The left/right sound passed 3,205 tests against the original.</figcaption></figure>
-    <figure><img src="../assets/09a-fone.jpg" alt="Headphones and a one-button app" loading="lazy"><figcaption><b>Headphones.</b> In ~30 min of back and forth, a user got his own one-button app to turn on wind reduction. Other cases: Notion's copy and paste and the bullet pattern of a PC-98 game.</figcaption></figure>
-    <figure><img src="../assets/10b-cleanroom.jpg" alt="Clean room: same result without seeing the code" loading="lazy"><figcaption><b>PhotoCraft.</b> A different method (clean room, without looking at the binary): Photoshop rebuilt in Rust from public documentation + tests against the original. Still in alpha.</figcaption></figure>
+    <figure><img src="../assets/07b-regras-en.jpg" alt="The 3 rules of the vault" loading="lazy"><figcaption><b>The vault.</b> An app compiled without names (242+ <code>FUN_…</code> functions). The agent found the right function, recovered the 3 rules from the code and wrote a generator: <code>AGNT-1001</code> opened it.</figcaption></figure>
+    <figure><img src="../assets/08b-ciclo-en.jpg" alt="Cycle: trace, write, compile, compare" loading="lazy"><figcaption><b>DX-Ball (1990s).</b> 528 candidate functions, 283 rewritten in C, <b>140 byte-for-byte identical</b>. The left/right sound passed 3,205 tests against the original.</figcaption></figure>
+    <figure><img src="../assets/09a-fone-en.jpg" alt="Headphones and a one-button app" loading="lazy"><figcaption><b>Headphones.</b> In ~30 min of back and forth, a user got his own one-button app to turn on wind reduction. Other cases: Notion's copy and paste and the bullet pattern of a PC-98 game.</figcaption></figure>
+    <figure><img src="../assets/10b-cleanroom-en.jpg" alt="Clean room: same result without seeing the code" loading="lazy"><figcaption><b>PhotoCraft.</b> A different method (clean room, without looking at the binary): Photoshop rebuilt in Rust from public documentation + tests against the original. Still in alpha.</figcaption></figure>
   </div>
 </div></section>
 
@@ -251,7 +272,7 @@ and build something similar in my project."</span></pre>
       • Expecting miracles from any model: on deliberately protected binaries, even the best models solve only part of the cases (SRE-Bench).</p></div>
   </div>
   <div class="card" style="margin-top:16px"><h3>🧪 Test done here (Oct 10, 2026)</h3><p>We ran REA 6.3.0 (<code>analyze-javascript-application</code>, no Ghidra, no MCP) on a Linux ARM server. <b>It worked</b> on one of our own Node apps (97 files, 3.5 MB): in 20 s and 1.3 GB of RAM it returned a graph with 2,109 nodes and 3,104 edges, 2,508 findings and 5 declared limitations, without running the app. <b>It hung</b> on two targets that had a single huge JS file (the bundle of an installed Electron app and <code>typescript/_tsc.js</code>, 6 MB): it sat at 100% CPU for more than 20 min on the same file, ignored SIGTERM and only stopped with <code>kill -9</code>. Bottom line: it works well on normal-sized projects; on large apps, run it with a time cap (<code>timeout -s KILL</code>) and without <code>node_modules</code>. The full JSON is huge (241 MB here): day to day, let the agent query it through MCP instead of reading the whole file.</p></div>
-  <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><img src="../assets/11b-diferencial.jpg" alt="Data, server, distribution, trust, speed" loading="lazy" style="width:100%;display:block"></figure>
+  <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><img src="../assets/11b-diferencial-en.jpg" alt="Data, server, distribution, trust, speed" loading="lazy" style="width:100%;display:block"></figure>
   <p class="mut" style="margin-top:12px">For those who sell software: assume any agent can map your app. What protects you is data, the server, distribution, trust and speed, not closed code.</p>
 </div></section>
 
@@ -276,7 +297,7 @@ and build something similar in my project."</span></pre>
   <h2>Before pointing at a program</h2>
   <p class="sub">REA itself warns you: the responsibility is yours.</p>
   <div class="ex">
-    <figure><img src="../assets/12a-cuidados.jpg" alt="License and law, not a sandbox, changes every day" loading="lazy"><figcaption>Three precautions that apply to any use.</figcaption></figure>
+    <figure><img src="../assets/12a-cuidados-en.jpg" alt="License and law, not a sandbox, changes every day" loading="lazy"><figcaption>Three precautions that apply to any use.</figcaption></figure>
     <div>
       <div class="phase"><div class="tag">1 · Law</div><div class="d"><strong>License and law</strong><span>Many licenses forbid reverse engineering; breaking copy protection is a separate problem. Safe ground: your own programs, open source, security challenges and what you are authorized to test. This is not legal advice.</span></div></div>
       <div class="phase"><div class="tag">2 · Isolate</div><div class="d"><strong>Not a sandbox</strong><span>If REA runs the target, it runs with your permissions. A strange binary may hide instructions meant to trick the agent. Use an isolated machine and keep the agent's approvals turned on.</span></div></div>

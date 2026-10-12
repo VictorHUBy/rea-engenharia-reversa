@@ -100,6 +100,11 @@
   .phase .d span{color:var(--mut);font-size:.92rem}
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  .tbl{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:.95rem}
+  .tbl th,.tbl td{border:1px solid var(--line);padding:.65em .8em;text-align:left}
+  .tbl th{background:var(--bg2);color:var(--amb2);font-weight:700}
+  .tbl td:first-child{font-weight:700}
+  .tblwrap{overflow-x:auto}
 </style>
 </head>
 <body>
@@ -114,6 +119,7 @@
   </span>
   <div class="links">
     <a class="sec" href="#oque">O que é</a>
+    <a class="sec" href="#custo">Custo</a>
     <a class="sec" href="#guia">Começar</a>
     <a class="sec" href="#exemplos">Casos</a>
     <a class="sec" href="#avaliacao">Vale a pena?</a>
@@ -188,6 +194,21 @@
     <div class="card"><h3>Descompilador (só p/ nativo)</h3><p>Ghidra (grátis, precisa de Java), Hopper ou IDA. O setup pode instalar o Hopper, com sua permissão.</p><pre><span class="c"># Ghidra: baixe em</span>
 <span class="s">github.com/NationalSecurityAgency/ghidra/releases</span></pre></div>
   </div>
+</div></section>
+
+<section id="custo"><div class="wrap">
+  <span class="chip">Ferramentas · custo</span>
+  <h2>Qual descompilador usar, e quanto custa</h2>
+  <p class="sub">Dos três que o REA aceita, só o Ghidra é totalmente gratuito e aberto. O IDA tem uma versão Free, com limites.</p>
+  <div class="tblwrap"><table class="tbl"><thead><tr><th>Ferramenta</th><th>Gratuita?</th><th>Código aberto?</th><th>Preço</th></tr></thead><tbody><tr><td>Ghidra</td><td>Sim</td><td>Sim</td><td>US$ 0</td></tr><tr><td>Hopper</td><td>Teste grátis</td><td>Não</td><td>Licença paga</td></tr><tr><td>IDA</td><td>Versão Free</td><td>Não</td><td>Pro a partir de ~US$ 1.099/ano</td></tr></tbody></table></div>
+  <div class="grid g3">
+    <div class="card"><h3>1. Ghidra — a recomendação</h3><p>Feito pela NSA, roda em Windows, Linux e Mac, descompila e aceita automação por scripts. Sem custo de licença, inclusive para uso comercial.</p><p><a href="https://github.com/NationalSecurityAgency/ghidra" target="_blank" rel="noopener">GitHub oficial →</a></p></div>
+    <div class="card"><h3>2. Hopper — alternativa no Mac</h3><p>Comercial, com teste gratuito. A versão atual anuncia integração MCP nativa, o que interessa para agentes de IA.</p><p><a href="https://www.hopperapp.com/" target="_blank" rel="noopener">Site oficial →</a></p></div>
+    <div class="card"><h3>3. IDA — o profissional</h3><p>O IDA Free só cobre x86/x64 e uso não comercial, e não traz o IDAPython dos planos pagos, o que atrapalha a automação.</p><p><a href="https://hex-rays.com/pricing" target="_blank" rel="noopener">Versões e preços →</a></p></div>
+  </div>
+  <h3 style="margin-top:28px">E quanto custa montar com o REA?</h3>
+  <div class="tblwrap"><table class="tbl"><tbody><tr><td>Agente de IA (Codex ou Claude Code)</td><td>Variável: assinatura ou tokens</td></tr><tr><td>REA + MCP</td><td>Grátis (MIT): faz a integração e a orquestração</td></tr><tr><td>Ghidra</td><td>Grátis e aberto</td></tr></tbody></table></div>
+  <p><b>Conclusão:</b> para montar o seu próprio sistema de engenharia reversa com agentes, comece com <b>REA + Ghidra + Codex</b>. Não há licença de descompilador para pagar, e a análise roda numa máquina Windows ou Linux, inclusive numa VPS bem configurada. O custo principal fica no processamento e nos tokens da IA, se você usar modelo pago. Preços mudam: confira nos sites oficiais antes de comprar.</p>
 </div></section>
 
 <section id="guia"><div class="wrap">
