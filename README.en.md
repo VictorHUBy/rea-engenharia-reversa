@@ -67,6 +67,8 @@ npx -y rea-agents@latest analyze-javascript-application /absolute/path/to/app.as
 
 For native binaries (Mac, Windows, Linux) you need an installed decompiler: Ghidra (free), Hopper or IDA.
 
+**Want to build your own version of an app?** See the step-by-step [How to rebuild an app with REA](pratica/RECONSTRUIR.md) (in Portuguese): pick the target (local features come along, cloud features do not), set up the agent, understand before building, iterate on details and go beyond the original.
+
 ## Is it worth it? Assessment
 
 **Truly useful for:**

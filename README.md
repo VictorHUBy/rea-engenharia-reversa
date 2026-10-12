@@ -65,6 +65,8 @@ npx -y rea-agents@latest analyze-javascript-application /caminho/absoluto/do/app
 
 Para binários nativos (Mac, Windows, Linux) é preciso um descompilador instalado: Ghidra (grátis), Hopper ou IDA.
 
+**Quer fazer a sua própria versão de um app?** Veja o roteiro [Como reconstruir um app com o REA](pratica/RECONSTRUIR.md): escolher o alvo (o que é local vem, o que é nuvem não), montar o ambiente, entender antes de construir, iterar nos detalhes e ir além do original.
+
 ## Vale a pena? Avaliação
 
 **Útil de verdade para:**
