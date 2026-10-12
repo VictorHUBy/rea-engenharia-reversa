@@ -1,0 +1,544 @@
+WEBVTT
+
+00:00.000 --> 00:00.820
+O mesmo programa
+
+00:00.820 --> 00:01.420
+que travou o
+
+00:01.420 --> 00:02.220
+nosso computador por
+
+00:02.220 --> 00:02.700
+mais de vinte
+
+00:02.700 --> 00:03.820
+minutos agora foi
+
+00:03.820 --> 00:04.570
+analisado em noventa
+
+00:04.570 --> 00:05.720
+e quatro segundos.
+
+00:05.720 --> 00:06.700
+Hoje eu abro
+
+00:06.700 --> 00:07.700
+o REA por
+
+00:07.700 --> 00:08.660
+dentro: por que
+
+00:08.660 --> 00:09.220
+ele funciona tão
+
+00:09.220 --> 00:10.020
+bem, como ele
+
+00:10.020 --> 00:10.920
+é montado, o
+
+00:10.920 --> 00:11.340
+que mudou na
+
+00:11.340 --> 00:12.290
+versão seis ponto
+
+00:12.290 --> 00:12.980
+quatro, e no
+
+00:12.980 --> 00:14.080
+fim, a habilidade
+
+00:14.080 --> 00:14.620
+que fica mais
+
+00:14.620 --> 00:15.580
+importante pra você.
+
+00:15.580 --> 00:16.440
+A explicação não
+
+00:16.440 --> 00:17.000
+é o modelo.
+
+00:17.000 --> 00:17.980
+É a referência.
+
+00:17.980 --> 00:18.990
+Quando você pede
+
+00:18.990 --> 00:19.460
+pra clonar um
+
+00:19.460 --> 00:20.040
+programa que já
+
+00:20.040 --> 00:21.060
+existe, o próprio
+
+00:21.060 --> 00:21.800
+programa é a
+
+00:21.800 --> 00:22.460
+especificação.
+
+00:22.460 --> 00:23.660
+O agente constrói,
+
+00:23.660 --> 00:24.520
+compara com o
+
+00:24.520 --> 00:25.480
+original, e sabe
+
+00:25.480 --> 00:25.920
+na hora se
+
+00:25.920 --> 00:26.360
+acertou.
+
+00:26.360 --> 00:27.040
+É um ciclo
+
+00:27.040 --> 00:28.060
+de validação fechado,
+
+00:28.060 --> 00:28.920
+sem depender de
+
+00:28.920 --> 00:29.520
+você explicar o
+
+00:29.520 --> 00:30.000
+que quer.
+
+00:30.000 --> 00:30.480
+Por isso é
+
+00:30.480 --> 00:31.240
+errado concluir que
+
+00:31.240 --> 00:32.260
+agora o agente
+
+00:32.260 --> 00:33.340
+constrói qualquer coisa.
+
+00:33.340 --> 00:33.900
+No dia a
+
+00:33.900 --> 00:34.560
+dia, o que
+
+00:34.560 --> 00:35.360
+você quer construir
+
+00:35.360 --> 00:36.340
+ainda não existe.
+
+00:36.340 --> 00:37.520
+Sem referência, o
+
+00:37.520 --> 00:38.180
+agente escreve um
+
+00:38.180 --> 00:38.860
+código bom que
+
+00:38.860 --> 00:39.500
+erra o alvo.
+
+00:39.500 --> 00:40.200
+A saída é
+
+00:40.200 --> 00:41.160
+criar a referência:
+
+00:41.160 --> 00:41.860
+um documento de
+
+00:41.860 --> 00:43.360
+requisitos, exemplos, e
+
+00:43.360 --> 00:44.280
+uma comparação lado
+
+00:44.280 --> 00:44.720
+a lado no
+
+00:44.720 --> 00:45.080
+fim.
+
+00:45.080 --> 00:46.140
+Por dentro, o
+
+00:46.140 --> 00:47.400
+REA é uma
+
+00:47.400 --> 00:48.080
+linha de comando
+
+00:48.080 --> 00:48.900
+e um servidor
+
+00:48.900 --> 00:50.060
+MCP
+
+00:50.060 --> 00:51.000
+que dividem o
+
+00:51.000 --> 00:51.680
+mesmo núcleo.
+
+00:51.680 --> 00:52.545
+São cerca de
+
+00:52.545 --> 00:52.740
+cento e cinquenta
+
+00:52.740 --> 00:54.060
+comandos e mais
+
+00:54.060 --> 00:54.980
+de cem ferramentas
+
+00:54.980 --> 00:56.060
+MCP.
+
+00:56.060 --> 00:57.320
+Ele não decompila
+
+00:57.320 --> 00:58.640
+sozinho: ele orquestra
+
+00:58.640 --> 00:59.800
+motores de especialista,
+
+00:59.800 --> 01:01.500
+como Ghidra, Hopper,
+
+01:01.500 --> 01:02.800
+IDA e Frida,
+
+01:02.800 --> 01:03.380
+e tem um
+
+01:03.380 --> 01:04.500
+analisador próprio para
+
+01:04.500 --> 01:05.180
+aplicativos em
+
+01:05.180 --> 01:06.400
+JavaScript e Electron.
+
+01:06.400 --> 01:07.080
+Tudo o que
+
+01:07.080 --> 01:07.860
+ele devolve é
+
+01:07.860 --> 01:08.860
+uma evidência: um
+
+01:08.860 --> 01:09.600
+registro com o
+
+01:09.600 --> 01:10.420
+hash do arquivo
+
+01:10.420 --> 01:11.340
+analisado, quem
+
+01:11.340 --> 01:12.460
+produziu, o grau
+
+01:12.460 --> 01:13.320
+de confiança e
+
+01:13.320 --> 01:13.980
+uma lista de
+
+01:13.980 --> 01:14.800
+limitações.
+
+01:14.800 --> 01:15.420
+E aqui está
+
+01:15.420 --> 01:16.120
+o detalhe mais
+
+01:16.120 --> 01:17.260
+técnico: quando ele
+
+01:17.260 --> 01:18.140
+não sabe, ele
+
+01:18.140 --> 01:18.560
+diz que não
+
+01:18.560 --> 01:19.020
+sabe.
+
+01:19.020 --> 01:19.860
+Numa comparação de
+
+01:19.860 --> 01:20.800
+versões, ele só
+
+01:20.800 --> 01:21.720
+afirma que algo
+
+01:21.720 --> 01:22.700
+foi removido se
+
+01:22.700 --> 01:23.340
+a cobertura do
+
+01:23.340 --> 01:24.040
+outro lado for
+
+01:24.040 --> 01:24.820
+completa.
+
+01:24.820 --> 01:25.760
+Senão, marca como
+
+01:25.760 --> 01:26.540
+desconhecido.
+
+01:26.540 --> 01:27.760
+Agora o teste.
+
+01:27.760 --> 01:28.360
+No dia dez,
+
+01:28.360 --> 01:29.150
+a versão seis
+
+01:29.150 --> 01:30.180
+ponto três travou
+
+01:30.180 --> 01:30.660
+mais de vinte
+
+01:30.660 --> 01:31.880
+minutos num aplicativo
+
+01:31.880 --> 01:32.860
+Electron e só
+
+01:32.860 --> 01:34.000
+parou à força.
+
+01:34.000 --> 01:35.175
+Hoje, a versão
+
+01:35.175 --> 01:35.760
+seis ponto quatro
+
+01:35.760 --> 01:36.600
+analisou o mesmo
+
+01:36.600 --> 01:37.590
+aplicativo em noventa
+
+01:37.590 --> 01:38.500
+e quatro segundos,
+
+01:38.500 --> 01:39.360
+com pouco mais
+
+01:39.360 --> 01:39.900
+de um giga
+
+01:39.900 --> 01:40.780
+de memória: duzentos
+
+01:40.780 --> 01:41.940
+e dez arquivos
+
+01:41.940 --> 01:42.612
+e treze mil
+
+01:42.612 --> 01:43.660
+e quinhentos achados.
+
+01:43.660 --> 01:44.400
+O arquivo que
+
+01:44.400 --> 01:45.640
+travava agora guarda
+
+01:45.640 --> 01:46.380
+os fatos estáticos
+
+01:46.380 --> 01:46.920
+e declara o
+
+01:46.920 --> 01:47.920
+resto como limitação.
+
+01:47.920 --> 01:48.660
+O que mudou
+
+01:48.660 --> 01:49.700
+foi a engenharia
+
+01:49.700 --> 01:50.160
+em volta.
+
+01:50.160 --> 01:51.300
+Cada análise roda
+
+01:51.300 --> 01:52.380
+num processo separado,
+
+01:52.380 --> 01:53.220
+com limite de
+
+01:53.220 --> 01:53.860
+memória e de
+
+01:53.860 --> 01:54.640
+tempo, e pode
+
+01:54.640 --> 01:55.480
+ser interrompida no
+
+01:55.480 --> 01:56.640
+meio, devolvendo o
+
+01:56.640 --> 01:57.760
+que já concluiu.
+
+01:57.760 --> 01:58.540
+Você controla isso
+
+01:58.540 --> 01:59.180
+com max heap
+
+01:59.180 --> 02:00.540
+e analysis timeout.
+
+02:00.540 --> 02:01.620
+Num projeto nosso,
+
+02:01.620 --> 02:03.160
+sem node_modules,
+
+02:03.220 --> 02:04.320
+foram vinte segundos.
+
+02:04.320 --> 02:05.080
+Os limites também
+
+02:05.080 --> 02:05.880
+são técnicos.
+
+02:05.880 --> 02:06.780
+O próprio projeto
+
+02:06.780 --> 02:07.740
+avisa: isso não
+
+02:07.740 --> 02:08.640
+é um sandbox.
+
+02:08.640 --> 02:09.580
+O Ghidra exige
+
+02:09.580 --> 02:10.260
+Java vinte e
+
+02:10.260 --> 02:11.000
+um, o Hopper
+
+02:11.000 --> 02:11.440
+não tem versão
+
+02:11.440 --> 02:12.380
+para ARM, e
+
+02:12.380 --> 02:13.240
+a instalação mexe
+
+02:13.240 --> 02:13.960
+na configuração do
+
+02:13.960 --> 02:14.560
+Claude Code e
+
+02:14.560 --> 02:15.560
+do Codex: rode
+
+02:15.560 --> 02:16.140
+antes com dry
+
+02:16.140 --> 02:16.500
+run.
+
+02:16.500 --> 02:17.140
+E use só
+
+02:17.140 --> 02:17.440
+no que é
+
+02:17.440 --> 02:17.980
+seu ou para
+
+02:17.980 --> 02:18.540
+estudar.
+
+02:18.540 --> 02:19.380
+A lição maior:
+
+02:19.380 --> 02:19.960
+se o próximo
+
+02:19.960 --> 02:20.640
+modelo for duas
+
+02:20.640 --> 02:21.620
+vezes melhor, saber
+
+02:21.620 --> 02:22.200
+explicar o que
+
+02:22.200 --> 02:22.920
+você quer vale
+
+02:22.920 --> 02:23.700
+ainda mais.
+
+02:23.700 --> 02:24.840
+O REA mostra
+
+02:24.840 --> 02:25.660
+isso, porque ali
+
+02:25.660 --> 02:26.260
+a intenção já
+
+02:26.260 --> 02:26.720
+vem pronta.
+
+02:26.720 --> 02:27.820
+O guia técnico,
+
+02:27.820 --> 02:28.240
+com todos os
+
+02:28.240 --> 02:28.760
+comandos e os
+
+02:28.760 --> 02:29.800
+nossos testes, está
+
+02:29.800 --> 02:30.373
+no inema ponto
+
+02:30.373 --> 02:30.973
+club.
