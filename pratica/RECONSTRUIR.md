@@ -39,6 +39,14 @@ Peça ao agente, nesta ordem:
 
 - **Escreva do zero**, a partir do comportamento observado. Não copie código, ícones, marca nem textos do original.
 - **Modelo para o trabalho pesado:** o relato usou um modelo barato e rápido para gerar o app (~US$ 20 em 4 a 5 horas). Para tarefas pequenas e repetidas (ex.: revisar transcrição), um modelo menor pela sua assinatura sai mais barato que pagar token por token.
+- **Opções baratas além de Claude e Codex:** os modelos abertos chineses custam uma fração do preço e dão conta de muito código:
+  - **DeepSeek** (o relato usou um harness do DeepSeek para montar o ambiente);
+  - **GLM** (Zhipu / Z.ai; no relato, foi ele que executou as edições do vídeo);
+  - **Qwen** (Alibaba);
+  - **Kimi** (Moonshot);
+  - **MiniMax**.
+
+  Formas de usar: pela **OpenRouter** (uma chave só para todos e troca de modelo sem mudar o código), pela API do próprio fabricante ou **local**, com os pesos abertos (Ollama), quando a máquina aguenta. Atenção: a API direta do fabricante manda seus dados para servidores na China. Para código ou arquivo sensível, prefira rodar local ou usar um provedor que hospede o modelo fora de lá.
 - **Serviços prontos onde o original usava nuvem:** em vez de clonar o servidor, ligue um serviço que faz a mesma coisa. No editor de vídeo: transcrição (Whisper/Groq), áudio de estúdio (Auphonic), um modelo que assiste o vídeo quadro a quadro (Gemini Flash) e um modelo aberto (GLM) para decidir os cortes. Prefira o que roda local quando existir.
 - **Aba de configurações** para as chaves desses serviços, guardadas só na máquina do usuário.
 
