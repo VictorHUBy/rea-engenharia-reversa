@@ -8,7 +8,12 @@ Guía en español sobre **REA (Reverse Engineer Anything)**, la herramienta abie
 
 ## 🎬 Video
 
-**[Ver: REA, la IA que hace ingeniería inversa](https://inematds.github.io/rea-engenharia-reversa/videos/)** (6 min, en portugués, con capítulos y subtítulos).
+- **[REA por dentro (técnico)](https://inematds.github.io/rea-engenharia-reversa/videos/#tecnico)**: por qué funciona, arquitectura, evidencia, la prueba antes y después en 6.4.0 y los límites.
+- **[REA en la práctica](https://inematds.github.io/rea-engenharia-reversa/videos/#na-pratica)**: clona una app en 4 pasos (2 min) · [reel](https://www.youtube.com/shorts/B9D1phZJXWM)
+- **[REA, la IA que hace ingeniería inversa](https://inematds.github.io/rea-engenharia-reversa/videos/#completo)** (6 min, capítulos y subtítulos)
+- En YouTube: [clona la app que usas](https://www.youtube.com/watch?v=dwxV0xXdElk) · [¿recrea casi cualquier app?](https://www.youtube.com/watch?v=QQFhiUch0kk) · reels [1](https://www.youtube.com/shorts/eTgtEf5bnvU) [2](https://www.youtube.com/shorts/Hlmma9RB-UM) [3](https://www.youtube.com/shorts/HwbWFVrWC4w) [4](https://www.youtube.com/shorts/QWLSY0LfUAY)
+
+Todos los videos están en portugués.
 
 ## 📖 Guía de uso
 
@@ -29,7 +34,7 @@ La ingeniería inversa consiste en descubrir cómo funciona un programa mirando 
 
 | Proyecto | Qué es | Licencia |
 |---|---|---|
-| [morluto/rea](https://github.com/morluto/rea) | REA: MCP + CLI de ingeniería inversa para agentes (TypeScript, ~61 mil estrellas, versión 6.3.0 el 09/10/2026) | MIT |
+| [morluto/rea](https://github.com/morluto/rea) | REA: MCP + CLI de ingeniería inversa para agentes (TypeScript, ~144 mil estrellas, versión 6.4.0 el 09/10/2026) | MIT |
 | [rea.tools](https://rea.tools/) | Sitio oficial: guías ilustradas y casos reales | — |
 | [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) | Ghidra, el descompilador gratuito de la NSA (Java, ~82 mil estrellas, 12.1.4) | Apache-2.0 |
 | [N0zoM1z0/dx-ball](https://github.com/N0zoM1z0/dx-ball) | Reconstrucción del juego DX-Ball 1.07 en C/C++ con REA + Ghidra, probada byte a byte | MIT |
@@ -77,6 +82,10 @@ Para binarios nativos (Mac, Windows, Linux) hace falta un descompilador instalad
 - Personas sin conocimientos técnicos ni terminal: exige Node, línea de comandos y paciencia con versiones que cambian todos los días (5.0 → 6.3 en tres días).
 - Copiar el producto de un competidor: es riesgoso jurídicamente y pierde el punto. Entiende la idea y hazlo mejor.
 - Programas muy protegidos (VMProtect, ofuscación pesada) o cuya lógica corre en el servidor: ahí REA ayuda poco. El resultado también depende mucho del modelo de IA usado.
+
+### Nueva prueba en 6.4.0 (12/10/2026)
+
+La misma app Electron que se trabó en 6.3.0 terminó en **94,5 s** en 6.4.0, con un pico de 1,26 GB: 202 archivos JS leídos, 0 fallas, 13.500 hallazgos. El archivo que se trababa conservó sus hechos estáticos y el resto quedó como limitación declarada. Lo corrimos aislado (HOME de prueba, límite de memoria y de tiempo) con `--max-heap-mb 1024 --analysis-timeout-ms 60000`. Detalles y el comando en la [guía](https://inematds.github.io/rea-engenharia-reversa/guia/es/#teste64).
 
 ### Prueba hecha aquí (10/10/2026)
 

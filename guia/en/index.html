@@ -118,10 +118,12 @@
   </span>
   <div class="links">
     <a class="sec" href="#oque">What it is</a>
-    <a class="sec" href="#custo">Cost</a>
+    <a class="sec" href="#porque">Why it works</a>
+    <a class="sec" href="#dentro">Inside</a>
     <a class="sec" href="#guia">Get started</a>
     <a class="sec" href="#exemplos">Cases</a>
-    <a class="sec" href="#avaliacao">Worth it?</a>
+    <a class="sec" href="#teste64">6.4 test</a>
+    <a class="sec" href="#videos">Videos</a>
     <a class="sec" href="#links">Links</a>
     <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
@@ -138,7 +140,7 @@
       <p class="lead">REA gives Claude Code, Codex or Cursor the tools of reverse engineering. Here you understand the technology, see the real cases and find out whether it is worth it for you.</p>
       <div class="cta">
         <a class="btn" href="#guia">Start the guide</a>
-        <a class="btn ghost" href="../../videos/">▶ Watch the video (in Portuguese)</a>
+        <a class="btn ghost" href="#videos">▶ See the videos (in Portuguese)</a>
         <a class="btn ghost" href="#links">See all links</a>
       </div>
     </div>
@@ -183,6 +185,18 @@
   </div>
 </div></section>
 
+<section id="porque"><div class="wrap">
+  <span class="chip">Why it works</span>
+  <h2>The original program is the specification</h2>
+  <p class="sub">The reason REA works so well isn’t the AI model. It’s the reference.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🎯 Ready-made reference</h3><p>When you clone an existing program, the program itself shows you what the result should look like. No one needs to explain the intent: it’s already built in.</p></div>
+    <div class="card"><h3>🔁 Closed loop</h3><p>The agent builds, compares against the original, and knows right away whether it got it right. It’s a validation loop that doesn’t depend on you. That’s how DX-Ball reached 140 functions identical byte for byte.</p></div>
+    <div class="card"><h3>⚠️ The misconception</h3><p>This doesn’t prove the agent can build anything. What you want to create doesn’t exist yet. Without a reference, the agent writes good code that misses the mark. The solution is to <b>create the reference</b>: requirements, examples, and a side-by-side comparison at the end.</p></div>
+  </div>
+  <p class="mut" style="margin-top:14px">The test that applies to any skill: if the next model is twice as good, does it matter more or less? Prompt tricks matter less. Knowing how to explain what you want and set up a reference for the agent to check itself matters more.</p>
+</div></section>
+
 <section id="pre"><div class="wrap">
   <span class="chip">Prerequisites</span>
   <h2>What you need</h2>
@@ -210,6 +224,25 @@
   <p><b>Bottom line:</b> to build your own reverse engineering system with agents, start with <b>REA + Ghidra + Codex</b>. There is no decompiler license to pay, and the analysis runs on a Windows or Linux machine, including a properly configured VPS. The main cost is compute and AI tokens, if you use a paid model. Prices change: check the official sites before buying.</p>
 </div></section>
 
+<section id="dentro"><div class="wrap">
+  <span class="chip">Under the hood · technical</span>
+  <h2>CLI and MCP server on the same core</h2>
+  <p class="sub">Read in the version 6.4.0 code (10/12/2026). REA does not decompile on its own: it orchestrates specialist engines and returns everything in the same evidence format.</p>
+  <figure style="margin:0 0 22px;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><img src="../assets/rea-arquitetura-en.jpg" alt="REA architecture: agent, CLI and MCP server, Evidence core, and Ghidra, Hopper, IDA, Frida, and JS/Electron engines" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g2">
+    <div class="card"><h3>Two entry points, one core</h3><p><code>scripts/rea.mjs</code> is the entry point: <code>rea mcp</code> starts the MCP server (stdio); any other command goes to the CLI. Both use the same application layer and evidence contract. The CLI has around 150 commands, and MCP has more than 100 tools.</p></div>
+    <div class="card"><h3>Everything becomes Evidence</h3><p>Each response includes <code>evidence_id</code>, the <code>sha256</code> of the analyzed file, who produced it (<code>provider</code>), the confidence level, and a list of <code>limitations</code>. When it doesn’t know, it says so. In a version comparison, it only says “removed” if coverage on the other side is complete; otherwise, it marks it as unknown.</p></div>
+  </div>
+  <div class="tblwrap" style="margin-top:18px"><table class="tbl"><thead><tr><th>Engine</th><th>Purpose</th><th>License</th><th>Linux ARM64</th></tr></thead><tbody>
+    <tr><td>JavaScript/Electron (built in)</td><td>App graph, IPC, source maps, without execution</td><td>Free</td><td>Yes (tested)</td></tr>
+    <tr><td>Ghidra 12.1 + JDK 21</td><td>Native binary: pseudocode, references</td><td>Free</td><td>Yes, with the decompiler compiled for ARM</td></tr>
+    <tr><td>Hopper</td><td>Native binary</td><td>Paid, with a demo</td><td>No with the setup (downloads the x86 package)</td></tr>
+    <tr><td>IDA · JEB</td><td>Native · Android</td><td>Paid</td><td>Depends on the product</td></tr>
+    <tr><td>Frida · browser (CDP) · adb</td><td>Observe at runtime</td><td>Free</td><td>Yes</td></tr>
+  </tbody></table></div>
+  <div class="card" style="margin-top:16px"><h3>What <code>setup</code> writes</h3><p>Claude Code: <code>~/.claude.json</code> and the skill in <code>~/.claude/skills</code>. Codex: <code>~/.codex/config.toml</code>. OpenCode: <code>opencode.json</code>. It shows the plan, asks for approval, creates a <code>.rea.backup</code> copy, and pins the version. Run it first with <code>--dry-run</code>; to undo, use <code>rea uninstall</code>. The project warns that it is not a sandbox, and we found no code that sends usage data.</p></div>
+</div></section>
+
 <section id="guia"><div class="wrap">
   <span class="chip">User guide · step by step</span>
   <h2>Get started in 4 steps</h2>
@@ -218,13 +251,15 @@
   <div class="step"><div class="b">1</div><div>
     <h3>Try it without installing anything</h3>
     <p>Static analysis of an Electron app needs neither Ghidra nor MCP, and does not run the app. Point it at the folder or the <code>app.asar</code>.</p>
-<pre><span class="k">npx -y rea-agents@latest analyze-javascript-application</span> <span class="s">/caminho/absoluto/app.asar</span> --json</pre>
+<pre><span class="k">npx -y rea-agents@latest analyze-javascript-application</span> <span class="s">/caminho/absoluto/app.asar</span> \
+  --max-heap-mb 1024 --analysis-timeout-ms 60000 --json</pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
     <h3>Connect REA to your agent</h3>
     <p>The setup shows the plan, backs up your configuration and asks before changing anything. It registers the MCP server and installs the investigation method (skill).</p>
-<pre><span class="k">npx rea-agents setup</span>   <span class="c"># restart the agent afterwards</span></pre>
+<pre><span class="k">npx rea-agents setup --dry-run</span>   <span class="c"># shows what it will write, without writing</span>
+<span class="k">npx rea-agents setup</span>             <span class="c"># restart the agent afterwards</span></pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
@@ -271,9 +306,44 @@ and build something similar in my project."</span></pre>
       • Heavily protected programs (VMProtect, heavy obfuscation) or with the logic on the server.<br>
       • Expecting miracles from any model: on deliberately protected binaries, even the best models solve only part of the cases (SRE-Bench).</p></div>
   </div>
-  <div class="card" style="margin-top:16px"><h3>🧪 Test done here (Oct 10, 2026)</h3><p>We ran REA 6.3.0 (<code>analyze-javascript-application</code>, no Ghidra, no MCP) on a Linux ARM server. <b>It worked</b> on one of our own Node apps (97 files, 3.5 MB): in 20 s and 1.3 GB of RAM it returned a graph with 2,109 nodes and 3,104 edges, 2,508 findings and 5 declared limitations, without running the app. <b>It hung</b> on two targets that had a single huge JS file (the bundle of an installed Electron app and <code>typescript/_tsc.js</code>, 6 MB): it sat at 100% CPU for more than 20 min on the same file, ignored SIGTERM and only stopped with <code>kill -9</code>. Bottom line: it works well on normal-sized projects; on large apps, run it with a time cap (<code>timeout -s KILL</code>) and without <code>node_modules</code>. The full JSON is huge (241 MB here): day to day, let the agent query it through MCP instead of reading the whole file.</p></div>
+  <div class="card" style="margin-top:16px"><h3>🧪 First test (Oct 10, 2026, version 6.3.0) · <a href="#teste64">see the 6.4.0 retest</a></h3><p>We ran REA 6.3.0 (<code>analyze-javascript-application</code>, no Ghidra, no MCP) on a Linux ARM server. <b>It worked</b> on one of our own Node apps (97 files, 3.5 MB): in 20 s and 1.3 GB of RAM it returned a graph with 2,109 nodes and 3,104 edges, 2,508 findings and 5 declared limitations, without running the app. <b>It hung</b> on two targets that had a single huge JS file (the bundle of an installed Electron app and <code>typescript/_tsc.js</code>, 6 MB): it sat at 100% CPU for more than 20 min on the same file, ignored SIGTERM and only stopped with <code>kill -9</code>. Bottom line: it works well on normal-sized projects; on large apps, run it with a time cap (<code>timeout -s KILL</code>) and without <code>node_modules</code>. The full JSON is huge (241 MB here): day to day, let the agent query it through MCP instead of reading the whole file.</p></div>
   <figure style="margin:26px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><img src="../assets/11b-diferencial-en.jpg" alt="Data, server, distribution, trust, speed" loading="lazy" style="width:100%;display:block"></figure>
   <p class="mut" style="margin-top:12px">For those who sell software: assume any agent can map your app. What protects you is data, the server, distribution, trust and speed, not closed code.</p>
+</div></section>
+
+<section id="teste64"><div class="wrap">
+  <span class="chip">Tested here · 10/12/2026</span>
+  <h2>Before and after: the app that stalled, in 94 seconds</h2>
+  <p class="sub">Same ARM64 Linux server (Node 24.13), same Electron app that stalled on 6.3.0. We ran 6.4.0 in isolation: HOME and npm cache in a test folder, with memory and time limits on the entire process.</p>
+  <div class="tblwrap"><table class="tbl"><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+    <tr><td>Electron app (210 files) on <b>6.3.0</b>, 10/10</td><td>Stalled: 100% CPU for over 20 min on a single file; only stopped with <code>kill -9</code></td></tr>
+    <tr><td>Same app on <b>6.4.0</b>, with <code>--max-heap-mb 1024 --analysis-timeout-ms 60000</code></td><td><b>94.5 s</b>, peak of 1.26 GB: 202 JS files read, 0 failures, 7.9 million nodes, 4,898 modules, 13,500 findings. The file that stalled preserved the static facts, and the rest became a declared limitation (377 total)</td></tr>
+    <tr><td>Our Node project, without <code>node_modules</code></td><td>19.7 s, 0.55 GB: graph with 998 nodes and 1,260 links, 1,295 findings</td></tr>
+    <tr><td>Go binary (<code>inspect-artifact</code>)</td><td>1.4 s: file format, hash, and inventory</td></tr>
+    <tr><td><code>setup --dry-run</code> in a test HOME</td><td>Nothing written; diagnostics show Ghidra and IDA are not configured</td></tr>
+  </tbody></table></div>
+  <h3 style="margin-top:22px">How to run it the same way</h3>
+<pre><span class="c"># Test HOME: nothing touches your agent configuration</span>
+<span class="k">mkdir -p</span> /tmp/rea-test
+<span class="k">systemd-run --user --scope -p MemoryMax=8G -p RuntimeMaxSec=900</span> \
+  env HOME=/tmp/rea-test npm_config_cache=/tmp/rea-test/npm \
+  <span class="k">npx -y rea-agents@6.4.0 analyze-javascript-application</span> <span class="s">/absolute/path/app.asar</span> \
+  --max-heap-mb 1024 --analysis-timeout-ms 60000 --json &gt; evidence.json</pre>
+  <p class="mut">What changed in 6.4.0: each analysis runs in a separate process, with memory and time limits, and can be interrupted partway through while returning what it has completed. No Linux? Replace <code>systemd-run</code> with your system’s time limit. The JSON output is large (41 MB here): for everyday use, have the agent query it through MCP.</p>
+</div></section>
+
+<section id="videos"><div class="wrap">
+  <span class="chip">Videos</span>
+  <h2>All videos about REA</h2>
+  <p class="sub">From concepts to technical details. The longer videos have a player with chapters and captions on the <a href="../../videos/">videos page</a>. Videos are in Portuguese.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🧠 Inside REA (technical)</h3><p>Why it works, its architecture, evidence, the before-and-after test, and its limitations. <a href="../../videos/#tecnico">Watch</a></p></div>
+    <div class="card"><h3>🛠️ REA in practice</h3><p>Clone an app in 4 steps and see the error that stalled the test. <a href="../../videos/#na-pratica">Watch</a> · <a href="https://www.youtube.com/shorts/B9D1phZJXWM" target="_blank" rel="noopener">reel</a></p></div>
+    <div class="card"><h3>🔓 The AI that reverse engineers</h3><p>What it is, Ghidra, the vault, DX-Ball, and what to watch out for (6 min). <a href="../../videos/#completo">Watch</a></p></div>
+    <div class="card"><h3>📱 You can clone the app you use</h3><p>The viral angle: a race with and without REA. <a href="https://www.youtube.com/watch?v=dwxV0xXdElk" target="_blank" rel="noopener">YouTube</a> · <a href="https://www.youtube.com/shorts/eTgtEf5bnvU" target="_blank" rel="noopener">short</a></p></div>
+    <div class="card"><h3>🤔 Can it recreate almost any app?</h3><p>The hype and what’s real. <a href="https://www.youtube.com/watch?v=QQFhiUch0kk" target="_blank" rel="noopener">YouTube</a></p></div>
+    <div class="card"><h3>⚡ Reels</h3><p><a href="https://www.youtube.com/shorts/Hlmma9RB-UM" target="_blank" rel="noopener">Clone any software</a> · <a href="https://www.youtube.com/shorts/HwbWFVrWC4w" target="_blank" rel="noopener">No tools needed</a> · <a href="https://www.youtube.com/shorts/QWLSY0LfUAY" target="_blank" rel="noopener">Mind blown</a></p></div>
+  </div>
 </div></section>
 
 <section id="links"><div class="wrap">
@@ -281,7 +351,7 @@ and build something similar in my project."</span></pre>
   <h2>All the repositories</h2>
   <p class="sub">Third-party projects. Stars and versions checked on Oct 10, 2026.</p>
   <div class="grid g3">
-    <div class="card"><h3><a href="https://github.com/morluto/rea" target="_blank" rel="noopener">morluto/rea</a></h3><p>REA: MCP + reverse engineering CLI for agents. TypeScript, MIT, ~61k stars, version 6.3.0.</p></div>
+    <div class="card"><h3><a href="https://github.com/morluto/rea" target="_blank" rel="noopener">morluto/rea</a></h3><p>REA: MCP + reverse engineering CLI for agents. TypeScript, MIT, ~144k stars, version 6.4.0 (Oct 12, 2026).</p></div>
     <div class="card"><h3><a href="https://rea.tools/" target="_blank" rel="noopener">rea.tools</a></h3><p>Official site with illustrated guides (native, JavaScript, browser) and the case studies.</p></div>
     <div class="card"><h3><a href="https://github.com/NationalSecurityAgency/ghidra" target="_blank" rel="noopener">Ghidra (NSA)</a></h3><p>Free, open-source decompiler from the NSA. Java, Apache-2.0, ~82k stars, version 12.1.4.</p></div>
     <div class="card"><h3><a href="https://github.com/N0zoM1z0/dx-ball" target="_blank" rel="noopener">N0zoM1z0/dx-ball</a></h3><p>DX-Ball 1.07 rebuilt in C/C++ with REA + Ghidra, tested byte for byte. MIT. The game files are not included.</p></div>

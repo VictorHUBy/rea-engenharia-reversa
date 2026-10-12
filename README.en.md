@@ -8,7 +8,12 @@ A guide in English about **REA (Reverse Engineer Anything)**, the open tool that
 
 ## 🎬 Video
 
-**[Watch: REA, the AI that does reverse engineering](https://inematds.github.io/rea-engenharia-reversa/videos/)** (6 min, in Portuguese, with chapters and subtitles).
+- **[Inside REA (technical)](https://inematds.github.io/rea-engenharia-reversa/videos/#tecnico)**: why it works, architecture, evidence, the before/after test on 6.4.0 and the limits.
+- **[REA in practice](https://inematds.github.io/rea-engenharia-reversa/videos/#na-pratica)**: clone an app in 4 steps (2 min) · [reel](https://www.youtube.com/shorts/B9D1phZJXWM)
+- **[REA, the AI that does reverse engineering](https://inematds.github.io/rea-engenharia-reversa/videos/#completo)** (6 min, chapters and subtitles)
+- On YouTube: [clone the app you use](https://www.youtube.com/watch?v=dwxV0xXdElk) · [rebuilds almost any app?](https://www.youtube.com/watch?v=QQFhiUch0kk) · reels [1](https://www.youtube.com/shorts/eTgtEf5bnvU) [2](https://www.youtube.com/shorts/Hlmma9RB-UM) [3](https://www.youtube.com/shorts/HwbWFVrWC4w) [4](https://www.youtube.com/shorts/QWLSY0LfUAY)
+
+All videos are in Portuguese.
 
 ## 📖 User guide
 
@@ -29,7 +34,7 @@ Reverse engineering is figuring out how a program works by looking only at the e
 
 | Project | What it is | License |
 |---|---|---|
-| [morluto/rea](https://github.com/morluto/rea) | REA: reverse engineering MCP + CLI for agents (TypeScript, ~61k stars, version 6.3.0 on Oct 9, 2026) | MIT |
+| [morluto/rea](https://github.com/morluto/rea) | REA: reverse engineering MCP + CLI for agents (TypeScript, ~144k stars, version 6.4.0 on Oct 12, 2026) | MIT |
 | [rea.tools](https://rea.tools/) | Official site: illustrated guides and real cases | — |
 | [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) | Ghidra, the NSA's free decompiler (Java, ~82k stars, 12.1.4) | Apache-2.0 |
 | [N0zoM1z0/dx-ball](https://github.com/N0zoM1z0/dx-ball) | Reconstruction of the game DX-Ball 1.07 in C/C++ with REA + Ghidra, tested byte by byte | MIT |
@@ -77,6 +82,10 @@ For native binaries (Mac, Windows, Linux) you need an installed decompiler: Ghid
 - Non-technical people without a terminal: it requires Node, the command line and patience with versions that change every day (5.0 → 6.3 in three days).
 - Copying a competitor's product: it is legally risky and misses the point. Understand the idea and do it better.
 - Heavily protected programs (VMProtect, heavy obfuscation) or ones whose logic runs on the server: REA helps little there. The result also depends a lot on the AI model used.
+
+### Retest on 6.4.0 (Oct 12, 2026)
+
+The same Electron app that hung on 6.3.0 finished in **94.5 s** on 6.4.0, peaking at 1.26 GB: 202 JS files read, 0 failures, 13,500 findings. The file that used to hang kept its static facts and the rest became a declared limitation. We ran it isolated (test HOME, memory and time limits) with `--max-heap-mb 1024 --analysis-timeout-ms 60000`. Details and the command in the [guide](https://inematds.github.io/rea-engenharia-reversa/guia/en/#teste64).
 
 ### Test run here (10/10/2026)
 
