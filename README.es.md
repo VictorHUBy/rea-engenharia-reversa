@@ -8,6 +8,7 @@ Guía en español sobre **REA (Reverse Engineer Anything)**, la herramienta abie
 
 ## 🎬 Video
 
+- **[Lee la app, no el servidor](https://inematds.github.io/rea-engenharia-reversa/videos/#servidor)**: por qué REA lee la app del banco pero no toca tu cuenta, qué se filtra y la regla (1m36, en portugués) · [short](https://www.youtube.com/shorts/Wz1XZyEyFI8)
 - **[REA por dentro (técnico)](https://inematds.github.io/rea-engenharia-reversa/videos/#tecnico)**: por qué funciona, arquitectura, evidencia, la prueba antes y después en 6.4.0 y los límites.
 - **[REA en la práctica](https://inematds.github.io/rea-engenharia-reversa/videos/#na-pratica)**: clona una app en 4 pasos (2 min) · [reel](https://www.youtube.com/shorts/B9D1phZJXWM)
 - **[REA, la IA que hace ingeniería inversa](https://inematds.github.io/rea-engenharia-reversa/videos/#completo)** (6 min, capítulos y subtítulos)
