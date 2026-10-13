@@ -46,7 +46,9 @@
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
   nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
-  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  nav .links a.sec{color:var(--mut);white-space:nowrap}
+@media(max-width:1260px){nav .links a.sec{display:none}}
+@media(max-width:1720px){nav .links a.sec.opt{display:none}} nav .links a.sec:hover{color:var(--txt)}
   .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
   .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
   .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
@@ -119,12 +121,13 @@
   </span>
   <div class="links">
     <a class="sec" href="#oque">O que é</a>
-    <a class="sec" href="#porque">Por que funciona</a>
-    <a class="sec" href="#dentro">Por dentro</a>
+    <a class="sec" href="#servidor">Limite</a>
+    <a class="sec opt" href="#porque">Por que funciona</a>
+    <a class="sec opt" href="#dentro">Por dentro</a>
     <a class="sec" href="#plataformas">Sem travas</a>
     <a class="sec" href="#guia">Começar</a>
-    <a class="sec" href="#exemplos">Casos</a>
-    <a class="sec" href="#teste64">Teste 6.4</a>
+    <a class="sec opt" href="#exemplos">Casos</a>
+    <a class="sec opt" href="#teste64">Teste 6.4</a>
     <a class="sec" href="#videos">Vídeos</a>
     <a class="sec" href="#links">Links</a>
     <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
@@ -197,6 +200,18 @@
     <div class="card"><h3>⚠️ O engano</h3><p>Isso não prova que o agente constrói qualquer coisa. O que você quer criar ainda não existe. Sem referência, o agente escreve código bom que erra o alvo. A saída é <b>criar a referência</b>: requisitos, exemplos e uma comparação lado a lado no fim.</p></div>
   </div>
   <p class="mut" style="margin-top:14px">O teste que vale para qualquer habilidade: se o próximo modelo for duas vezes melhor, ela importa mais ou menos? Truques de prompt importam menos. Saber explicar o que você quer, e montar a referência para o agente se conferir, importa mais.</p>
+</div></section>
+
+<section id="servidor"><div class="wrap">
+  <span class="chip">O limite · servidor</span>
+  <h2>O que roda no servidor, ninguém consegue fazer o reverso</h2>
+  <p class="sub">O REA lê o que está <b>no seu computador</b>: o app, o binário, o JavaScript. Os dados e a lógica que ficam no servidor da empresa nunca chegam até você, então não há o que abrir. Você vê o que o app envia e recebe, nunca como o servidor decide.</p>
+  <div class="grid g3">
+    <div class="card" style="border-color:var(--amb)"><h3>🔒 Fica fora de alcance</h3><p>Banco de dados e contas dos usuários, regras de negócio e preços, modelos de IA e prompts, pagamentos, chaves e senhas do servidor.</p></div>
+    <div class="card" style="border-color:var(--amb)"><h3>💸 Clonou a tela, não o motor</h3><p>Para a sua versão funcionar, você precisa recriar o servidor e pagar por ele: hospedagem, banco, APIs de IA. Muitas vezes é a parte mais cara do sistema.</p></div>
+    <div class="card" style="border-color:var(--amb)"><h3>✂️ O dono pode cortar</h3><p>Se o seu clone usar o servidor original, a empresa bloqueia a chave, muda a API ou derruba o acesso quando quiser, e tudo para de funcionar.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><p><b>Para quem cria app:</b> o que é valioso fica no servidor. Assuma que qualquer agente mapeia o seu app; o que protege é o servidor, os dados e a confiança, não o código fechado. <a href="https://www.youtube.com/watch?v=jZui-hQsaDY" target="_blank" rel="noopener">▶ Vídeo: lê o app, não o servidor</a></p></div>
 </div></section>
 
 <section id="pre"><div class="wrap">

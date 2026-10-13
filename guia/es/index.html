@@ -46,7 +46,9 @@
   nav .pro:hover{filter:brightness(1.15)}
   nav .clubpro{display:inline-flex;align-items:center;gap:6px}
   nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
-  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  nav .links a.sec{color:var(--mut);white-space:nowrap}
+@media(max-width:1260px){nav .links a.sec{display:none}}
+@media(max-width:1720px){nav .links a.sec.opt{display:none}} nav .links a.sec:hover{color:var(--txt)}
   .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
   .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
   .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
@@ -119,12 +121,13 @@
   </span>
   <div class="links">
     <a class="sec" href="#oque">Qué es</a>
-    <a class="sec" href="#porque">Por qué funciona</a>
-    <a class="sec" href="#dentro">Por dentro</a>
+    <a class="sec" href="#servidor">Límite</a>
+    <a class="sec opt" href="#porque">Por qué funciona</a>
+    <a class="sec opt" href="#dentro">Por dentro</a>
     <a class="sec" href="#plataformas">Sin trabas</a>
     <a class="sec" href="#guia">Empezar</a>
-    <a class="sec" href="#exemplos">Casos</a>
-    <a class="sec" href="#teste64">Prueba 6.4</a>
+    <a class="sec opt" href="#exemplos">Casos</a>
+    <a class="sec opt" href="#teste64">Prueba 6.4</a>
     <a class="sec" href="#videos">Videos</a>
     <a class="sec" href="#links">Enlaces</a>
     <span class="lang"><a href="../">PT</a><a href="../en/">EN</a><a class="on" href="./">ES</a></span>
@@ -197,6 +200,18 @@
     <div class="card"><h3>⚠️ El error</h3><p>Esto no demuestra que el agente pueda construir cualquier cosa. Lo que quieres crear aún no existe. Sin una referencia, el agente escribe buen código que no da en el blanco. La solución es <b>crear la referencia</b>: requisitos, ejemplos y una comparación lado a lado al final.</p></div>
   </div>
   <p class="mut" style="margin-top:14px">La prueba que sirve para cualquier habilidad: si el próximo modelo es el doble de bueno, ¿importa más o menos? Los trucos de prompts importan menos. Saber explicar lo que quieres y preparar la referencia para que el agente pueda comprobar su trabajo importa más.</p>
+</div></section>
+
+<section id="servidor"><div class="wrap">
+  <span class="chip">El límite · servidor</span>
+  <h2>Lo que corre en el servidor, nadie puede hacerle ingeniería inversa</h2>
+  <p class="sub">REA lee lo que está <b>en tu computadora</b>: la app, el binario, el JavaScript. Los datos y la lógica que quedan en el servidor de la empresa nunca llegan a ti, así que no hay nada que abrir. Ves lo que la app envía y recibe, nunca cómo decide el servidor.</p>
+  <div class="grid g3">
+    <div class="card" style="border-color:var(--amb)"><h3>🔒 Fuera de alcance</h3><p>Base de datos y cuentas de usuarios, reglas de negocio y precios, modelos de IA y prompts, pagos, claves y contraseñas del servidor.</p></div>
+    <div class="card" style="border-color:var(--amb)"><h3>💸 Clonaste la pantalla, no el motor</h3><p>Para que tu versión funcione, tienes que recrear el servidor y pagarlo: hosting, base de datos, APIs de IA. Muchas veces es la parte más cara del sistema.</p></div>
+    <div class="card" style="border-color:var(--amb)"><h3>✂️ El dueño puede cortarte</h3><p>Si tu clon usa el servidor original, la empresa puede bloquear la clave, cambiar la API o cortar el acceso cuando quiera, y todo deja de funcionar.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><p><b>Si creas apps:</b> lo valioso queda en el servidor. Asume que cualquier agente mapea tu app; lo que protege es el servidor, los datos y la confianza, no el código cerrado. <a href="https://www.youtube.com/watch?v=jZui-hQsaDY" target="_blank" rel="noopener">▶ Video: lee la app, no el servidor</a></p></div>
 </div></section>
 
 <section id="pre"><div class="wrap">
