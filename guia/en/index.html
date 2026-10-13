@@ -120,6 +120,7 @@
     <a class="sec" href="#oque">What it is</a>
     <a class="sec" href="#porque">Why it works</a>
     <a class="sec" href="#dentro">Inside</a>
+    <a class="sec" href="#plataformas">No guardrails</a>
     <a class="sec" href="#guia">Get started</a>
     <a class="sec" href="#exemplos">Cases</a>
     <a class="sec" href="#teste64">6.4 test</a>
@@ -241,6 +242,19 @@
     <tr><td>Frida · browser (CDP) · adb</td><td>Observe at runtime</td><td>Free</td><td>Yes</td></tr>
   </tbody></table></div>
   <div class="card" style="margin-top:16px"><h3>What <code>setup</code> writes</h3><p>Claude Code: <code>~/.claude.json</code> and the skill in <code>~/.claude/skills</code>. Codex: <code>~/.codex/config.toml</code>. OpenCode: <code>opencode.json</code>. It shows the plan, asks for approval, creates a <code>.rea.backup</code> copy, and pins the version. Run it first with <code>--dry-run</code>; to undo, use <code>rea uninstall</code>. The project warns that it is not a sandbox, and we found no code that sends usage data.</p></div>
+</div></section>
+
+<section id="plataformas"><div class="wrap">
+  <span class="chip">No guardrails · cloud</span>
+  <h2>No machine? Two OpenRouter-style platforms</h2>
+  <p class="sub">Claude, Codex and Gemini sometimes refuse parts of a reverse-engineering job, even a legitimate one. The way out is an open model that does not refuse. If your computer cannot run the model, these two prepaid platforms host it for you: add US$ 5 to 10 in credit, get the key and ask your agent (dsh, Claude Code, Codex) to use it.</p>
+  <div class="grid g2">
+    <div class="card"><h3>1. abliteration.ai</h3><p>Open <b>"abliterated"</b> models (the refusal reflex removed from the weights), through an OpenAI-compatible API. Prepaid per token or monthly plan.</p><pre><span class="c"># API endpoint</span>
+<span class="s">https://api.abliteration.ai/v1</span></pre><p><a href="https://abliteration.ai" target="_blank" rel="noopener">Open the site →</a></p></div>
+    <div class="card"><h3>2. OrcaRouter</h3><p>A router with 200+ models behind a single endpoint, just like OpenRouter. It has an open-source (MIT) version you can host yourself.</p><p><a href="https://orcarouter.ai" target="_blank" rel="noopener">Open the site →</a></p></div>
+  </div>
+  <div class="card" style="margin-top:16px;border-color:var(--amb)"><p><b>Heads up:</b> in the cloud, <b>your code leaves your machine</b>. For your own app or sensitive files, prefer a local model (Ollama). Prices and catalogs change: check the page before adding credit.</p></div>
+  <p>Full step by step, with dsh and the tested local models: <a href="https://inematds.github.io/rea-sem-travas/guia/en/" target="_blank" rel="noopener">REA sem travas →</a></p>
 </div></section>
 
 <section id="guia"><div class="wrap">

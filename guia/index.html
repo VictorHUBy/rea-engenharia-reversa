@@ -121,6 +121,7 @@
     <a class="sec" href="#oque">O que é</a>
     <a class="sec" href="#porque">Por que funciona</a>
     <a class="sec" href="#dentro">Por dentro</a>
+    <a class="sec" href="#plataformas">Sem travas</a>
     <a class="sec" href="#guia">Começar</a>
     <a class="sec" href="#exemplos">Casos</a>
     <a class="sec" href="#teste64">Teste 6.4</a>
@@ -242,6 +243,19 @@
     <tr><td>Frida · navegador (CDP) · adb</td><td>Observar em execução</td><td>Grátis</td><td>Sim</td></tr>
   </tbody></table></div>
   <div class="card" style="margin-top:16px"><h3>O que o <code>setup</code> grava</h3><p>Claude Code: <code>~/.claude.json</code> e a skill em <code>~/.claude/skills</code>. Codex: <code>~/.codex/config.toml</code>. OpenCode: <code>opencode.json</code>. Ele mostra o plano, pede aprovação, faz cópia <code>.rea.backup</code> e fixa a versão. Rode antes com <code>--dry-run</code>; para desfazer, <code>rea uninstall</code>. O projeto avisa: não é um sandbox, e não encontramos envio de dados de uso no código.</p></div>
+</div></section>
+
+<section id="plataformas"><div class="wrap">
+  <span class="chip">Sem travas · nuvem</span>
+  <h2>Sem máquina? Duas plataformas no estilo da OpenRouter</h2>
+  <p class="sub">Claude, Codex e Gemini às vezes recusam partes de uma engenharia reversa, mesmo legítima. A saída é um modelo aberto, sem recusa. Se o seu computador não roda o modelo, estas duas plataformas pré-pagas hospedam para você: põe US$ 5 a 10 de crédito, pega a chave e pede ao agente (dsh, Claude Code, Codex) para usá-la.</p>
+  <div class="grid g2">
+    <div class="card"><h3>1. abliteration.ai</h3><p>Modelos abertos <b>"abliterated"</b> (com o reflexo de recusar removido dos pesos), por API compatível com a da OpenAI. Pré-pago por token ou plano mensal.</p><pre><span class="c"># Endereço da API</span>
+<span class="s">https://api.abliteration.ai/v1</span></pre><p><a href="https://abliteration.ai" target="_blank" rel="noopener">Abrir o site →</a></p></div>
+    <div class="card"><h3>2. OrcaRouter</h3><p>Roteador com mais de 200 modelos num só endereço, igual à OpenRouter. Tem versão aberta (MIT) que você mesmo pode hospedar.</p><p><a href="https://orcarouter.ai" target="_blank" rel="noopener">Abrir o site →</a></p></div>
+  </div>
+  <div class="card" style="margin-top:16px;border-color:var(--amb)"><p><b>Atenção:</b> na nuvem, <b>o seu código sai da máquina</b>. Para app seu ou arquivo sensível, prefira o modelo local (Ollama). Preços e catálogo mudam: confira na página antes de pôr crédito.</p></div>
+  <p>Passo a passo completo, com o dsh e os modelos locais testados: <a href="https://inematds.github.io/rea-sem-travas/guia/" target="_blank" rel="noopener">REA sem travas →</a></p>
 </div></section>
 
 <section id="guia"><div class="wrap">
