@@ -1,0 +1,26 @@
+# Dependências e saídas de build, caso ferramentas locais sejam usadas
+node_modules/
+dist/
+build/
+_site/
+
+# Variáveis de ambiente e segredos
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs e caches
+*.log
+.cache/
+.jekyll-cache/
+.sass-cache/
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
